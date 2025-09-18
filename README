@@ -1,0 +1,44 @@
+This repository contains a collection of agent implementations for a workshop. Each agent demonstrates different capabilities and integration patterns.
+
+### Agents
+
+1.  **7-Day Weather Agent (`7dayagent`)**
+    *   **Description:** A Python-based agent that provides a 7-day weather forecast for a specified city.
+    *   **Implementation:** This agent uses a mock data source to generate weather forecasts, making it a good example of a simple, self-contained agent. It's built using the Google ADK.
+
+2.  **Airbnb Agent (`airbnb`)**
+    *   **Description:** A Python-based agent designed to interact with an Airbnb-like service.
+    *   **Implementation:** This agent uses the `MCPToolset` to connect to an external service, showcasing how to integrate agents with other platforms.
+
+3.  **Custom MCP Agent (`custommcp`)**
+    *   **Description:** A helpful assistant that can greet users and perform calculations.
+    *   **Implementation:** This agent utilizes a `Greeting Tool` and a `Calculator Tool` through the `MCPToolset`, demonstrating how to combine multiple tools within a single agent.
+
+4.  **DuckDuckGo Search Agent (`ducksearch`)**
+    *   **Description:** A Python-based agent capable of performing web searches using the DuckDuckGo search engine.
+    *   **Implementation:** It connects to a search service via the `MCPToolset`, providing a practical example of an agent that can access real-world information.
+
+### Technologies Used
+
+*   **Python:** The primary programming language for all agents.
+*   **Google ADK:** The framework used to build and structure the agents.
+*   **MCP (Model-Centric Protocol):** Used for communication between agents and external tools/services.
+
+### How to Run
+
+1.  **Set up the environment:**
+    ```bash
+    python -m venv .venv
+    source .venv/bin/activate
+    ```
+
+2.  **Install Dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3.  **Run an Agent:** Navigate to the directory of the agent you want to run and execute the `adk web` command. For example, to run the weather agent:
+    ```bash
+    cd 7dayagent
+    adk web
+    ```
