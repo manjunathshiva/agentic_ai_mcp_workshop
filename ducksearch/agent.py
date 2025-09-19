@@ -4,6 +4,7 @@ from google.adk.agents import LlmAgent
 from google.adk.tools.mcp_tool.mcp_toolset import (
     MCPToolset,
     StdioServerParameters,
+    StdioConnectionParams
 )
 
 # Using the specified model
@@ -25,19 +26,20 @@ AGENT_MODEL = LiteLlm(
     )
 
 toolset = MCPToolset(
-        connection_params=StdioServerParameters(
-            command='',
-            args=[""],
+        connection_params=StdioConnectionParams(
+            server_params=StdioServerParameters(
+                command='',
+                    args=[""],
+                ),
+            timeout=15,
         )
     )
-
-
 
 root_agent = LlmAgent(
         model=AGENT_MODEL,
         name="assistant",
         instruction="""
-        
+       
         """,
         tools=[toolset],
     )
